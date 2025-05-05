@@ -1,6 +1,7 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 public class FilmTest {
     @Test
     void filmTest(){
@@ -12,18 +13,16 @@ public class FilmTest {
     @Test
     void filmParitipacaoTest(){
         Film filme = new Film("Filmaço da Preula", 2025,"Hans Zimmer");
-        Role role = new ScreenwriterRole();
-        Person pessoa = new Person("Serginho Groisman");
-        filme.adicionarParticipacao(pessoa, role);
+        Employee pessoa = new Employee("Serginho Groisman");
+        filme.adicionarParticipacao(pessoa, Role.Director);
         assertEquals("Serginho Groisman", pessoa.getNome());
-        assertEquals("Roteirista", role.getNome());
+        assertEquals("Diretor", Role.Director.getNome());
     }
     @Test
     void obterDetalhesTest(){
         Film filme = new Film("Filmaço da Preula", 2025,"Hans Zimmer");
-        Role role = new ScreenwriterRole();
-        Person pessoa = new Person("Serginho Groisman");
-        filme.adicionarParticipacao(pessoa, role);
+        Employee pessoa = new Employee("Serginho Groisman");
+        filme.adicionarParticipacao(pessoa,Role.Screenwriter);
         filme.setDiretor("Tim Maia");
         filme.setRoteirista("Serginho Groisman");
         assertEquals("Título: Filmaço da Preula (2025)\n" +
@@ -43,18 +42,17 @@ public class FilmTest {
     @Test
     void filmParitipacaoNotTest(){
         Film filme = new Film("Filmaço da Preula", 2025,"Hans Zimmer");
-        Role role = new ScreenwriterRole();
-        Person pessoa = new Person("Serginho Groisman");
-        filme.adicionarParticipacao(pessoa, role);
+
+        Employee pessoa = new Employee("Serginho Groisman");
+        filme.adicionarParticipacao(pessoa, Role.Director);
         assertNotEquals("Pericles", pessoa.getNome());
-        assertNotEquals("Ator", role.getNome());
+        assertNotEquals("Ator", Role.Director.getNome());
     }
     @Test
     void obterDetalhesNotTest(){
         Film filme = new Film("Filmaço da Preula", 2025,"Hans Zimmer");
-        Role role = new ScreenwriterRole();
-        Person pessoa = new Person("Serginho Groisman");
-        filme.adicionarParticipacao(pessoa, role);
+        Employee pessoa = new Employee("Serginho Groisman");
+        filme.adicionarParticipacao(pessoa, Role.Director);
         filme.setDiretor("Tim Maia");
         filme.setRoteirista("Serginho Groisman");
         assertNotEquals("Título: Filmaço da Preula (2025)\n" +

@@ -1,11 +1,11 @@
 public class RoleAssignment {
-    private Person pessoa;
+    private Employee pessoa;
     private Role papel;
 
-    public RoleAssignment(Person pessoa, Role papel) {
+    public RoleAssignment(Employee pessoa, Role papel) {
         this.pessoa = pessoa;
         this.papel = papel;
     }
-    public Person getPessoa() { return pessoa; }
+    public Employee getPessoa() { return pessoa; }
     public Role getPapel() { return papel; }
 }

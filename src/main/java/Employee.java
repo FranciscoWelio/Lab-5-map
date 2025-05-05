@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class Person implements Registrable, FilmographyProvider {
+public class Employee implements Registrable, FilmographyProvider {
     private String nome;
     private Map<Film, List<Role>> filmografia = new HashMap<>();
 
-    public Person(String nome) {
+    public Employee(String nome) {
         this.nome = nome;
     }
 

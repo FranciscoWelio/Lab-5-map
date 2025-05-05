@@ -2,10 +2,10 @@ import java.util.*;
 
 public class FilmRegistry {
     private List<Film> filmes = new ArrayList<>();
-    private List<Person> pessoas = new ArrayList<>();
+    private List<Employee> pessoas = new ArrayList<>();
 
-    public Person adicionarPessoa(String nome) {
-        Person p = new Person(nome);
+    public Employee adicionarPessoa(String nome) {
+        Employee p = new Employee(nome);
         pessoas.add(p);
         return p;
     }
@@ -16,6 +16,4 @@ public class FilmRegistry {
         return f;
     }
 
-    public List<Person> getPessoas() { return Collections.unmodifiableList(pessoas); }
-    public List<Film> getFilmes() { return Collections.unmodifiableList(filmes); }
 }

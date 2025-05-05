@@ -31,14 +31,9 @@ public class Film implements FilmInfoProvider {
     public void setDiretor(String nome) { this.diretor = nome; }
     public void setRoteirista(String nome) { this.roteirista = nome; }
 
-    void adicionarParticipacao(Person pessoa, Role papel) {
+    void adicionarParticipacao(Employee pessoa, Role papel) {
         participacoes.add(new RoleAssignment(pessoa, papel));
     }
-
-    public List<RoleAssignment> getParticipacoes() {
-        return Collections.unmodifiableList(participacoes);
-    }
-
     @Override
     public String obterDetalhes() {
         StringBuilder sb = new StringBuilder();
